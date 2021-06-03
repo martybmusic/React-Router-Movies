@@ -11,16 +11,18 @@ export default function Movie(props) {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
-      .then(response => {
+      .then((response) => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
+        console.log('movie.js response', response);
+        setMovie(response.data);
       })
       .catch(error => {
         console.error(error);
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, [id]);
+  }, [`${id}`]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
@@ -43,7 +45,7 @@ export default function Movie(props) {
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
+        {stars.map((star) => (
           <div key={star} className="movie-star">
             {star}
           </div>
