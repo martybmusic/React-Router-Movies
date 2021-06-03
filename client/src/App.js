@@ -31,6 +31,10 @@ export default function App () {
 
   return (
     <div>
+      <div className='nav-links'>
+        <Link to='/'>Home</Link>
+        <Link to='/movies/:id'>Movies</Link>
+      </div>
       <SavedList list={[ /* This is stretch */]} />
     <Switch>
       <Route path={'/movies/:id'}>
