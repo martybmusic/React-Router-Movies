@@ -6,7 +6,7 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
-export default function App () {
+export default function App() {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
@@ -31,10 +31,10 @@ export default function App () {
 
   return (
     <div>
-      <div className='nav-links'>
+      {/* <div className='nav-links'>
         <Link to='/'>Home</Link>
         <Link to='/movies/:id'>Movies</Link>
-      </div>
+      </div> */}
       <SavedList list={[ /* This is stretch */]} />
     <Switch>
       <Route path={'/movies/:id'}>
